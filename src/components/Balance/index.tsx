@@ -1,4 +1,5 @@
 import { Text, View, StyleSheet } from "react-native";
+import { MotiView } from "moti";
 
 interface BalanceProps {
   balance: number;
@@ -7,9 +8,24 @@ interface BalanceProps {
 
 export default function Balance(props: BalanceProps) {
   const { balance, expenses } = props;
-  const currency = new Intl.NumberFormat("pt-BR");
+
   return (
-    <View style={styles.container}>
+    <MotiView
+      style={styles.container}
+      from={{
+        rotateX: "-100deg",
+        opacity: 0,
+      }}
+      animate={{
+        rotateX: "0deg",
+        opacity: 1,
+      }}
+      transition={{
+        type: "timing",
+        duration: 800,
+        delay: 150,
+      }}
+    >
       <View style={styles.item}>
         <Text style={styles.itemTitle}>Saldo</Text>
         <View style={styles.content}>
@@ -24,7 +40,7 @@ export default function Balance(props: BalanceProps) {
           <Text style={styles.expenses}>{expenses.toFixed(2)}</Text>
         </View>
       </View>
-    </View>
+    </MotiView>
   );
 }
 
