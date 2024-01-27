@@ -8,13 +8,18 @@ interface AuthProviderProps {
 
 export function AuthProvider({ children }: AuthProviderProps) {
   const [user, setUser] = useState<User>({} as User);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  function login() {}
+  function login() {
+    setIsAuthenticated(true);
+  }
 
-  function logout() {}
+  function logout() {
+    setIsAuthenticated(false);
+  }
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
