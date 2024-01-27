@@ -1,6 +1,11 @@
 import "react-native-reanimated";
-import Home from "./src/pages/Home";
+import { AuthProvider } from "./src/hooks/useAuth";
+import Routes from "./src/routes";
 
 export default function App() {
-  return <Home />;
+  return (
+    <AuthProvider>
+      <Routes />
+    </AuthProvider>
+  );
 }
