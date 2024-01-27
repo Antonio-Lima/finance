@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, FlatList } from "react-native";
 
-import Header from "../../components/Header";
-import Balance from "../../components/Balance";
-import Movement from "../../components/Movement";
+import Header from "../../../components/Header";
+import Balance from "../../../components/Balance";
+import Movement from "../../../components/Movement";
 
-import { list } from "../../constants";
-import Actions from "../../components/Actions";
+import { list } from "../../../constants";
+import Actions from "../../../components/Actions";
 
 export default function Home() {
   return (
