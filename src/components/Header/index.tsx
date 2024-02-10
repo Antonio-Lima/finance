@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { MotiView, MotiText } from "moti";
+import { colors } from "../../constants/styles";
 
 interface HeaderProps {
   name: string;
@@ -48,7 +49,7 @@ export default function Header(props: HeaderProps) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#8000ff",
+    backgroundColor: colors.mainBrand,
   },
   content: {
     padding: 20,
