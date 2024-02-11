@@ -1,4 +1,5 @@
 export const PUBLIC = {
+  WELCOME: "welcome",
   LOGIN: "login",
 };
 
