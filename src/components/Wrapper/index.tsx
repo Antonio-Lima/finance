@@ -29,6 +29,7 @@ export default function Wrapper(props: WrapperProps) {
         justifyContent,
         flex: 1,
         backgroundColor,
+        paddingHorizontal: 20,
       }}
     >
       {children}
