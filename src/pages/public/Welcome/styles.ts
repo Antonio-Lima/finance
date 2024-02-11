@@ -26,10 +26,9 @@ export const styles = StyleSheet.create({
   background: {
     position: "absolute",
     width: "200%",
-    height: "110%",
-    top: "40%",
+    aspectRatio: 9 / 12,
+    top: "38%",
     backgroundColor: colors.white,
-    transform: [{ rotate: "60deg" }],
     zIndex: -1,
   },
 });

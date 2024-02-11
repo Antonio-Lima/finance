@@ -17,7 +17,7 @@ export default function Welcome() {
     <Wrapper backgroundColor={colors.mainBrand}>
       <MotiView
         style={styles.main}
-        from={{ opacity: 0, translateY: 100 }}
+        from={{ opacity: 0, translateY: -100 }}
         animate={{ opacity: 1, translateY: 0 }}
         transition={{
           type: "timing",
@@ -25,21 +25,52 @@ export default function Welcome() {
         }}
       >
         <App height={250} />
-        <Text style={styles.title}>Welcome</Text>
-        <Text style={styles.subtitle}>to your finance app</Text>
-        <View style={styles.container}>
-          <Button
-            label="Login"
-            variant="primary"
-            onPress={() => navigation.navigate("login")}
-          />
-          <Button
-            label="Register"
-            variant="outline-blue"
-            onPress={() => console.log("Register")}
-          />
-        </View>
-        <MotiView style={styles.background} />
+        <MotiView
+          style={{
+            width: "100%",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          from={{ opacity: 0, translateX: 100 }}
+          animate={{ opacity: 1, translateX: 0 }}
+          transition={{
+            type: "timing",
+            duration: 1000,
+            delay: 500,
+          }}
+        >
+          <Text style={styles.title}>Welcome</Text>
+          <Text style={styles.subtitle}>to your finance app</Text>
+          <View style={styles.container}>
+            <Button
+              label="Login"
+              variant="primary"
+              onPress={() => navigation.navigate("login")}
+            />
+            <Button
+              label="Register"
+              variant="outline-blue"
+              onPress={() => console.log("Register")}
+            />
+          </View>
+        </MotiView>
+        <MotiView
+          style={styles.background}
+          from={{
+            opacity: 0,
+            translateY: 100,
+          }}
+          animate={{
+            opacity: 1,
+            translateY: 0,
+            transform: [{ rotate: "60deg" }],
+          }}
+          transition={{
+            type: "timing",
+            delay: 250,
+            duration: 1000,
+          }}
+        />
       </MotiView>
     </Wrapper>
   );
