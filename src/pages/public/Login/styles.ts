@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
 
-import { colors } from "../../../constants/styles";
+import { colors, dimensions } from "../../../constants/styles";
 
 export const styles = StyleSheet.create({
   title: {
+    color: colors.white,
     fontSize: 32,
     fontWeight: "bold",
     marginTop: 50,
@@ -11,7 +12,11 @@ export const styles = StyleSheet.create({
   container: {
     padding: 20,
     marginTop: 50,
-    width: "80%",
+    width: "100%",
     gap: 15,
+    borderRadius: dimensions.radius.s,
+    backgroundColor: colors.white,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
