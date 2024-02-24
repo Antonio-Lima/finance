@@ -13,7 +13,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     marginTop: 50,
     width: "100%",
-    gap: 15,
+    gap: 20,
     borderRadius: dimensions.radius.s,
     backgroundColor: colors.white,
     alignItems: "center",
