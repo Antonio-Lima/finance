@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../constants/styles";
+import { colors } from "../../../constants/styles";
 
 export const styles = StyleSheet.create({
   button: {
-    width: "100%",
+    minWidth: "100%",
     borderRadius: 99,
     borderWidth: 2,
     alignItems: "center",
