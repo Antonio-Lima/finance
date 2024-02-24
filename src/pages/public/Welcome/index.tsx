@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import { MotiView } from "moti";
 
 import Wrapper from "../../../components/Wrapper";
-import Button from "../../../components/Button";
+import Button from "../../../components/Form/Button";
 
 import { colors } from "../../../constants/styles";
 
