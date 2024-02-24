@@ -5,6 +5,9 @@ export const colors = {
   gray: {
     "500": "#9a9a9a",
   },
+  error: "#e94434",
+  warning: "#fdbb06",
+  success: "#34a853",
 };
 
 export const dimensions = {
