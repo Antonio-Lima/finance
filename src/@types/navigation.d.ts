@@ -6,6 +6,7 @@ declare global {
       welcome: undefined;
       login: undefined;
       home: undefined;
+      splash: undefined;
     }
   }
 }
