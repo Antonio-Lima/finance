@@ -3,6 +3,13 @@ import { StyleSheet } from "react-native";
 import { colors, dimensions } from "../../../constants/styles";
 
 export const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+    backgroundColor: colors.mainBrand,
+  },
   title: {
     color: colors.white,
     fontSize: 32,
