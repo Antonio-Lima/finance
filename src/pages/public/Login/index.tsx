@@ -1,19 +1,14 @@
 import {
   View,
-  TouchableOpacity,
-  TextInput,
-  Image,
   SafeAreaView,
   Text,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
-import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-import { colors } from "../../../constants/styles";
-
-import Wrapper from "../../../components/Wrapper";
 import Input from "../../../components/Form/Input";
 
 import { useAuth } from "../../../hooks/useAuth";
@@ -21,6 +16,8 @@ import { useAuth } from "../../../hooks/useAuth";
 import { styles } from "./styles";
 import { LoginSchema } from "../../../schemas/login";
 import Button from "../../../components/Form/Button";
+import useStorage from "../../../hooks/useStorage";
+import { DEFAULT_TOKEN } from "../../../constants";
 
 type LoginFormData = zod.infer<typeof LoginSchema>;
 
@@ -38,14 +35,22 @@ export default function Login() {
     },
   });
 
+  const [userToken, setUserToken] = useStorage("token");
+
   const { login } = useAuth();
 
   function onSubmit(form: LoginFormData) {
-    console.log(form);
+    if (form.username === "antonio" && form.password === "123456") {
+      setUserToken(DEFAULT_TOKEN);
+      login();
+    }
   }
 
   return (
-    <Wrapper backgroundColor={colors.mainBrand} justifyContent="center">
+    <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      style={styles.wrapper}
+    >
       <SafeAreaView />
       <Text style={styles.title}>Login</Text>
       <View style={styles.container}>
@@ -68,6 +73,6 @@ export default function Login() {
           onPress={handleSubmit(onSubmit)}
         />
       </View>
-    </Wrapper>
+    </KeyboardAvoidingView>
   );
 }
