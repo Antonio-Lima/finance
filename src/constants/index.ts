@@ -1,3 +1,5 @@
+export const DEFAULT_TOKEN = "070b722c-3300-4a4c-9ceb-3f2a44d3650e";
+
 export const list: Array<Transaction> = [
   {
     id: 0,
